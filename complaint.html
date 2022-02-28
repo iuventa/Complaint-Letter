@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="style.css">
+<div class="completter">
+    <form >
+    <div class="comptab">
+        <button class="comptablink" id="defaultOpen" onclick="openCity(event, 'repoter')">Reporter</button>
+        <button class="comptablink" onclick="openCity(event, 'victim')">Victim</button>
+        <button class="comptablink" onclick="openCity(event, 'incindentdetails')">INCIDENT DETAILS</button>
+        <button class="comptablink" onclick="openCity(event, 'suspect')">SUSPECT</button>
+        <button class="comptablink" onclick="openCity(event, 'moreinfo')">MORE INFORMATION:</button>
+      </div>
+      
+      <div id="repoter" class="tabcontent">
+        
+            <h3>REPORTED BY:</h3>
+            <p>Does the Reporter wish to be identified?</p>
+            
+            <input type="radio" id="reporteranswer" name="reporteranswer">
+            <label for="reporteranswer">Yes</label>
+
+            <input type="radio" id="reporteranswer" name="reporteranswer">
+            <label for="reporteranswer">No</label>
+
+            <div class="reporterinformation" id="reporterinfo">
+                <input type="text" id="compfname" name="compfname" placeholder="first name">
+                <input type="text" id="complname" name="complname" placeholder="last name">
+                <input type="tel" id="comptel" name="comptel" placeholder="phone number (Preferred)" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}">
+                <input type="tel" id="comptel2" name="comptel2" placeholder="phone number (Alternative)" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}">
+                <input type="email" itemid="compemail" name="compemail" placeholder="email">
+                <input type="text" name="comporganization" id="comporganization" placeholder="name of organization">
+                <input type="text" name="compjobtitle" id="compjobtitle" placeholder="job title">
+            </div>
+        
+      </div>
+      
+      <div id="victim" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+      </div>
+      
+      <div id="incindentdetails" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+      </div>
+      <div id="suspect" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+      </div>
+      <div id="moreinfo" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+      </div>
+    </form>
+</div>
+<script src="myjs.js"></script>
+
+
+
+<script>
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").style.backgroundColor = "#ed3237";
+document.getElementById("defaultOpen").style.color = "#ffffff";
+document.getElementById("victim").style.display = "none";
+document.getElementById("incindentdetails").style.display = "none";
+document.getElementById("suspect").style.display = "none";
+document.getElementById("moreinfo").style.display = "none";
+
+</script>

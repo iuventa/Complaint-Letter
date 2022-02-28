@@ -1,0 +1,80 @@
+* {box-sizing: border-box;
+    font-family: "BPG Arial Caps", sans-serif;}
+.completter{
+    width: 80%;
+    margin: 100px auto;
+}
+/* Style the tab */
+.comptab {
+  float: left;
+  width: 30%;
+  box-shadow: 0 4px 15px 0 rgb(0 0 0 / 6%);
+}
+
+/* Style the buttons that are used to open the tab content */
+.comptab button {
+  display: block;
+  background-color: inherit;
+  color: black;
+  padding: 22px 16px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+}
+
+/* Change background color of buttons on hover */
+.comptab button:hover {
+  background-color: #f3f3f3;
+}
+
+/* Create an active/current "tab button" class */
+.comptab button.active {
+  background-color: #ed3237;
+  color: #ffffff;
+}
+
+/* Style the tab content */
+.tabcontent {
+  float: left;
+  padding: 0px 12px;
+  box-shadow: 0 4px 15px 0 rgb(0 0 0 / 6%);
+  width: 70%;
+  border-left: none;
+  padding: 0px 50px 50px 50px;
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+.tabcontent form{
+    width: 100%;
+}
+.tabcontent input{
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #e7e7e7;
+    padding: 20px 0px;
+    outline: none;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+.tabcontent input:focus{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ed3237;
+}
+.tabcontent input[type=submit]{
+    background-color: #ed3237;
+    color: #ffffff;
+}
+#reporteranswer{
+    width: 5%;
+}
+  
+  /* Go from zero to full opacity */
+  @keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
