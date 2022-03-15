@@ -12,7 +12,7 @@
 }
 
 /* Style the buttons that are used to open the tab content */
-.comptab button {
+.comptablink{
   display: block;
   background-color: inherit;
   color: black;
@@ -28,29 +28,25 @@
 }
 
 /* Change background color of buttons on hover */
-.comptab button:hover {
+.comptablink:hover {
   background-color: #f3f3f3;
 }
 
 /* Create an active/current "tab button" class */
-.comptab button.active {
-  background-color: #ed3237;
-  color: #ffffff;
-}
+
 
 /* Style the tab content */
 .tabcontent {
   float: left;
   padding: 0px 12px;
-  box-shadow: 0 4px 15px 0 rgb(0 0 0 / 6%);
+  box-shadow: 0 4px 15px 0 rgb(0 0 0 / 16%);
   width: 70%;
   border-left: none;
   padding: 0px 50px 50px 50px;
   animation: fadeEffect 1s; /* Fading effect takes 1 second */
+  display: none;
 }
-.tabcontent form{
-    width: 100%;
-}
+
 .tabcontent input{
     width: 100%;
     border: none;
@@ -66,15 +62,56 @@
     border-bottom: 1px solid #ed3237;
 }
 .tabcontent input[type=submit]{
+  margin-top: 50px;
     background-color: #ed3237;
     color: #ffffff;
 }
-#reporteranswer{
+
+#victimidentity, #additionalperoninfo,#reporteranswer, #victivisual{
     width: 5%;
+    margin-top: 20px;
 }
-  
+#victimgenderlabel{
+    text-transform: capitalize;
+    font-size: 14px;
+}
+#incindentdetails input[type=checkbox]{
+  width: 5%;
+}
+
+#victimgender, #addpersongender, #suspectgender{
+  width: 50%;
+  border: none;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 20px 0px;
+  outline: none;
+  text-transform: capitalize;
+  font-size: 14px;
+  margin-left: 50px;
+}
+
+.underage18, .physicalemotionalstate, .suspectaddress, .addinfounknown, .ckeckallthatapply, .incidentlocationlabel{
+  font-style: italic;
+  font-size: 12px;
+}
+.unknownsuspect, .unknownaddress{
+  padding: 10px 0px;
+}
+#suspectidentitylabel, #unknownaddresslabel{
+  width: 95%;
+} 
+#suspectsidentity, #unknownaddress{
+  width: 5%;
+}
   /* Go from zero to full opacity */
   @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
+  }
+  .comptablink[activetab]{
+    background-color: #ed3237;
+    color: #ffffff;
+  }
+  .tabcontent[active]{
+    display: block;
   }

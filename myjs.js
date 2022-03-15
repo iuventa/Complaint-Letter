@@ -1,22 +1,20 @@
-function openCity(evt, cityName) {
-    // Declare all variables
-    var i, tabcontent, comptablink;
-  
-    // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-  
-    // Get all elements with class="comptablink" and remove the class "active"
-    comptablink = document.getElementsByClassName("comptablink");
-    for (i = 0; i < comptablink.length; i++) {
-      comptablink[i].className = comptablink[i].className.replace(" active", "");
-    }
-  
-    // Show the current tab, and add an "active" class to the link that opened the tab
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
+function openContent() {
+    console.log(this);
   }
+
+
+const tabs=document.getElementsByClassName("comptablink");
+console.log(tabs);
+
+for(let i=0; i<tabs.length; i++){
+    tabs[i].addEventListener("click", (e)=>{
+        const contentId = e.target.getAttribute("contentId");
+
+        document.querySelector(".comptablink[activetab]").removeAttribute("activeTab");
+        e.target.setAttribute("activetab", "");
+        document.querySelector(".tabcontent[active]").removeAttribute("active");
+        document.querySelector(`#${contentId}`).setAttribute("active", "");
+    })
+}
 
   

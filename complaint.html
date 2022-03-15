@@ -1,23 +1,23 @@
 <link rel="stylesheet" href="style.css">
 <div class="completter">
-    <form >
+    
     <div class="comptab">
-        <button class="comptablink" id="defaultOpen" onclick="openCity(event, 'repoter')">Reporter</button>
-        <button class="comptablink" onclick="openCity(event, 'victim')">Victim</button>
-        <button class="comptablink" onclick="openCity(event, 'incindentdetails')">INCIDENT DETAILS</button>
-        <button class="comptablink" onclick="openCity(event, 'suspect')">SUSPECT</button>
-        <button class="comptablink" onclick="openCity(event, 'moreinfo')">MORE INFORMATION:</button>
+        <button contentId="repoter" class="comptablink" id="defaultOpen"  activetab>Information About Reporter</button>
+        <button contentId="victim" class="comptablink" >Information About Victim</button>
+        <button contentId="incindentdetails" class="comptablink"  >INCIDENT DETAILS</button>
+        <button contentId="suspect" class="comptablink"  >Information About SUSPECT</button>
+        <button contentId="moreinfo" class="comptablink"  >MORE INFORMATION</button>
       </div>
       
-      <div id="repoter" class="tabcontent">
+      <div id="repoter" class="tabcontent" active>
         
             <h3>REPORTED BY:</h3>
             <p>Does the Reporter wish to be identified?</p>
             
-            <input type="radio" id="reporteranswer" name="reporteranswer">
+            <input class="radiowidth" type="radio" id="reporteranswer" name="reporteranswer">
             <label for="reporteranswer">Yes</label>
 
-            <input type="radio" id="reporteranswer" name="reporteranswer">
+            <input class="radiowidth" type="radio" id="reporteranswer" name="reporteranswer">
             <label for="reporteranswer">No</label>
 
             <div class="reporterinformation" id="reporterinfo">
@@ -29,39 +29,212 @@
                 <input type="text" name="comporganization" id="comporganization" placeholder="name of organization">
                 <input type="text" name="compjobtitle" id="compjobtitle" placeholder="job title">
             </div>
-        
+            
       </div>
       
       <div id="victim" class="tabcontent">
-        <h3>Paris</h3>
-        <p>Paris is the capital of France.</p>
+        <h3>VICTIM:</h3>
+            <p>Is the victim a child or an adult?</p>
+            
+            <input class="radiowidth" type="radio" id="victivisual" name="victivisual">
+            <label for="reporteranswer">Child</label>
+
+            <input class="radiowidth" type="radio" id="victivisual" name="victivisual">
+            <label for="reporteranswer">Adult</label>
+
+            <div class="reporterinformation" id="reporterinfo">
+                <input type="text" id="victimname" name="victimname" placeholder="first name">
+                <input type="text" id="victimlname" name="victimlname" placeholder="last name">
+                <input type="text" id="victimnickname" name="victimnickname" placeholder="nick name">
+            </div>
+
+            <label for="reporteranswer">Unknown</label>
+            <input type="radio" id="victimidentity" name="victimidentity">
+            <p>(If you are unable to provide the victim&#39;s identity, check Unknown.)</p>
+
+            <div class="reporterinformation" id="reporterinfo">
+              <input type="number" id="victimage" name="victimage" placeholder="Approximate age">
+              
+              <label for="victimgender" id="victimgenderlabel">Gender</label>
+              
+              <select id="victimgender" id="victimgenderselect">
+                <option value="female">Male</option>
+                <option value="female">Female</option>
+                <option value="na">N/A</option>
+              </select>
+            </div>
+
+            <p class="underage18">Child refers to all persons under the age of 18</p>
+            <p>Provide any additional information:</p>
+
+            <h4>Caregiver/Guardian/Relative:</h4>
+            <div class="additionalinformation" id="additionalinfo">
+              <input type="text" id="additionalname" name="additionalname" placeholder="first name">
+              <input type="text" id="additionallname" name="additionallname" placeholder="last name">
+              
+              <label for="additionalperoninfo">Unknown</label>
+              <input type="radio" id="additionalperoninfo" name="additionalperoninfo">
+              <p class="addinfounknown">(If you are unable to provide the caregiver/Guardian/Relative&#39;s identity, check Unknown.)</p>
+
+              <input type="text" id="addpersonlocation" name="addpersonlocation" placeholder="physical address">
+              <input type="tel" id="addpersphone" name="addpersphone" placeholder="phone number (Preferred)" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}">
+              <input type="tel" id="addpersphone2" name="addpersphone2" placeholder="phone number (Alternative)" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}">
+              <input type="email" itemid="addpersonemail" name="addpersonemail" placeholder="email">
+              <input type="number" id="victimage" name="victimage" placeholder="Approximate age">
+              
+              <label for="addpersongender" id="addpersongenderselect">Gender</label>
+              
+              <select id="addpersongender" id="addpersongender">
+                <option value="female">Male</option>
+                <option value="female">Female</option>
+                <option value="na">N/A</option>
+              </select>
+            </div>
       </div>
       
       <div id="incindentdetails" class="tabcontent">
-        <h3>Tokyo</h3>
-        <p>Tokyo is the capital of Japan.</p>
+          <h3>incindent details</h3>
+          <h4>Type of Incident:</h4>
+          <p class="ckeckallthatapply">(Check all that apply)</p>
+
+          <input class="radiowidth" type="checkbox" id="incindenttype" name="incindenttype">
+          <label for="incindenttype" id="incindentlabel">Sexual Abuse (e.g., fondling, kissing, non-contact sexual activity, rape)</label>
+          <br>
+          <input class="radiowidth" type="checkbox" id="incindenttype" name="incindenttype">
+          <label for="incindenttype"  id="incindentlabel">Exploitation (e.g. sex trafficking, forced prostitution, survival sex, child labor)</label>
+          <br>
+          <input class="radiowidth" type="checkbox" id="incindenttype" name="incindenttype">
+          <label for="incindenttype"  id="incindentlabel">Emotional Abuse (e.g. intimidation, threats, humiliation, bullying)</label>
+          <br>
+          <input class="radiowidth" type="checkbox" id="incindenttype" name="incindenttype">
+          <label for="incindenttype"  id="incindentlabel">Physical Abuse (e.g. hitting, kicking, shaking)</label>
+          <br>
+          <input class="radiowidth" type="checkbox" id="incindenttype" name="incindenttype">
+          <label for="incindenttype"  id="incindentlabel">Other (Define other)</label>
+          <br>
+          <input type="text" name="incidenttypeinput" id="incidenttypeinput" placeholder="Other (Define other)">
+
+          
+
+          <h4>Location:</h4>
+          <input type="text" name="incidentlocation" id="incidentlocation" placeholder="Address/Physical location of incident: (country)">
+          <label for="incidenttypeinput" class="incidentlocationlabel">(Examples include: name of village, street name, city, house, building)</label>
+
+          <h4>Dates:</h4>
+          <label for="incindetdate" id="incindetdatelabel">Approximate Date of Incident</label>
+          <input type="date" name="incindetdate" id="incindetdate" >
+          <br><br>
+          <label for="reporteddate" id="reporteddatelabel">Date Reported</label>
+          <input type="date" name="reporteddate" id="reporteddate">
+
+          <h4>Physical and Emotional State</h4>
+          <p class="physicalemotionalstate">Physical and Emotional state of victim (Check all that apply)</p>
+          <input type="checkbox" id="physicalemotionalstate" name="physicalemotionalstate">
+          <label for="incindenttype" id="physicalemotionalstate">Cuts, bruises, welts, scratches</label>
+          <br>
+          <input  type="checkbox" id="physicalemotionalstate" name="physicalemotionalstate">
+          <label for="incindenttype"  id="physicalemotionalstate">Behavioral changes (e.g., angry, crying, acting out, withdrawn, sudden illness)</label>
+          <br>
+          <input  type="checkbox" id="physicalemotionalstate" name="physicalemotionalstate">
+          <label for="incindenttype"  id="physicalemotionalstate">Other</label>
+          <br>
+          <input type="text" name="physicalemotionalstate" id="physicalemotionalstate" placeholder="Please further describe the physical and emotional state of the victim.">
+
+          <h4>Impairment or Disability</h4>
+          <p>Does the victim have a physical impairment or disability?</p>
+            
+          <input class="radiowidth" type="radio" id="victimdisability" name="reporteranswer">
+          <label for="reporteranswer">Yes</label>
+
+          <input class="radiowidth" type="radio" id="victimdisability" name="reporteranswer">
+          <label for="reporteranswer">No</label>
+
+          <input class="radiowidth" type="radio" id="victimdisability" name="reporteranswer">
+          <label for="reporteranswer">Do not know</label>
+            
+          <h4>Become Aware</h4>
+          <p>How did the reporter become aware of this incident?</p>
+
+          <input class="radiowidth" type="radio" id="becomeaware" name="reporteranswer">
+          <label for="becomeaware">Witnessed it</label>
+
+          <input class="radiowidth" type="radio" id="becomeaware" name="reporteranswer">
+          <label for="becomeaware">Other</label>
+
+          <input type="text" name="becomeawareother" id="becomeawareother" placeholder="(Define other)">
+
+          <h4>Safety of Victim</h4>
+          <p>Was the victim in immediate danger prior to completing this form?</p>
+          <input class="radiowidth" type="radio" id="victimdanger" name="victimdanger">
+          <label for="victimdanger">Yes</label>
+
+          <input class="radiowidth" type="radio" id="victimdanger" name="victimdanger">
+          <label for="victimdanger">No</label>
+
+          <p>Were the proper authorities and senior management contacted (as appropriate)?</p>
+          <input class="radiowidth" type="radio" id="managementcontacted" name="managementcontacted">
+          <label for="managementcontacted">Yes</label>
+
+          <input class="radiowidth" type="radio" id="managementcontacted" name="managementcontacted">
+          <label for="managementcontacted">No</label>
+
+          <p>Please provide any additional information.</p>
+          <input type="text" name="anyadditionalinfo" id="anyadditionalinfo">
       </div>
+
+
       <div id="suspect" class="tabcontent">
-        <h3>Tokyo</h3>
-        <p>Tokyo is the capital of Japan.</p>
+        <h3>SUSPECT</h3>
+        <input type="text" id="suspectname" name="suspectname" placeholder="first name">
+        <input type="text" id="suspectlname" name="suspectlname" placeholder="last name">
+        <div class="unknownsuspect">
+          <input class="radiowidth" type="radio" id="suspectsidentity" name="suspectsidentity">
+          <label for="suspectsidentity" id="suspectidentitylabel">Unknown (If you are unable to provide the suspect’s identity, check Unknown.)</label>
+        </div>
+        <input type="tel" id="suspecttel" name="suspecttel" placeholder="phone number" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}">
+        <input type="tel" id="suspecttel2" name="suspecttel2" placeholder="phone number (Alternative)" pattern="[0-9]{3}-[0-9]{2}-[0-9]{2}-[0-9]{2}">
+        <input type="email" itemid="suspectemail" name="suspectemail" placeholder="email">
+        <input type="number" name="suspectage" id="suspectage" placeholder="approximate age">
+        
+        <label for="suspectgender" id="suspectgenderlabel">Gender</label>
+              
+        <select id="suspectgender">
+          <option value="female">Male</option>
+          <option value="female">Female</option>
+          <option value="na">N/A</option>
+        </select>
+
+        <h4>Physical Description of Suspect</h4>
+        <input type="text" name="suspectaddress" id="suspectaddress" placeholder="Physical Address">
+        <label for="suspectaddress" class="suspectaddress">(Examples include: name of village, street name, city, house, building)</label>
+        <div class="unknownaddress">
+          <input class="radiowidth" type="radio" id="unknownaddress" name="unknownaddress">
+          <label for="unknownaddress" id="unknownaddresslabel">Physical Address Unknown</label>
+        </div>
+        <input type="text" name="susectorganization" id="susectorganization" placeholder="name of organization">
+        <input type="text" name="suspectjob" id="suspectjob" placeholder="job title">
+            
       </div>
       <div id="moreinfo" class="tabcontent">
-        <h3>Tokyo</h3>
-        <p>Tokyo is the capital of Japan.</p>
+        <h3>MORE INFORMATION</h3>
+        <p>Are there any other persons with more information?</p>
+        <input class="radiowidth" type="radio" id="moreinfo" name="moreinfo">
+        <label for="moreinfo">Yes</label>
+
+        <input class="radiowidth" type="radio" id="moreinfo" name="moreinfo">
+        <label for="moreinfo">No</label>
+        <p>If yes, provide details</p>
+        <input type="text" id="moreinfodetails" name="moreinfodetails" placeholder="More information details">
+
+        <input type="submit">
       </div>
-    </form>
+   
 </div>
 <script src="myjs.js"></script>
 
 
 
 <script>
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").style.backgroundColor = "#ed3237";
-document.getElementById("defaultOpen").style.color = "#ffffff";
-document.getElementById("victim").style.display = "none";
-document.getElementById("incindentdetails").style.display = "none";
-document.getElementById("suspect").style.display = "none";
-document.getElementById("moreinfo").style.display = "none";
+
 
 </script>
